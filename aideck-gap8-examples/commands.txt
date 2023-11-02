@@ -1,0 +1,29 @@
+sudo docker run --rm -v ${PWD}:/module --device /dev/ttyUSB0 --privileged -P myaideck tools/build/make-example examples/other/AI_deck_vel_send_cpx flash
+
+
+sudo docker run --rm -v ${PWD}:/module myaideck tools/build/make-example examples/other/AI_deck_vel_send_cpx image
+
+
+
+
+face 
+
+sudo docker run --rm -v ${PWD}:/module myaideck tools/build/make-example examples/image_processing/FaceDetection clean model build image
+
+
+sudo docker run --rm -v ${PWD}:/module --device /dev/ttyUSB0 --privileged -P myaideck tools/build/make-example examples/image_processing/FaceDetection flash
+
+
+make_app
+
+tb make_app examples/app_hello_world/ clean
+
+tb make_app examples/app_hello_world/ -j8
+
+cd examples/app_hello_world && CLOAD_CMDS="-w radio://0/80/2M" make cload
+
+
+
+classification
+sudo docker run --rm -v ${PWD}:/module aideck-with-autotiler tools/build/make-example examples/ai/classification2 clean model build image
+
