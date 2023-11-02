@@ -1,0 +1,1 @@
+cmd_/module/examples/app_hello_world2/built-in.o :=  arm-none-eabi-gcc --specs=nosys.specs --specs=nano.specs -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -nostdlib  -r -o /module/examples/app_hello_world2/built-in.o /module/examples/app_hello_world2/src/built-in.o
